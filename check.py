@@ -12,6 +12,12 @@ import numpy as np
 import sklearn as sc
 import matplotlib as mb
 import pdb
+#import timeit
+from timeit import default_timer
+
+
+start = default_timer()
+
 print("Hello world!")
 
 lista = [123, "spam", 1.23, "eggs"]
@@ -21,4 +27,8 @@ print(lista1)
 print(lista * 2)
 lista[2] = "Giovanni"
 print(lista)
+for epoch in range(1000000):
+    print("Epoch: ", epoch)
+print("Total time : ", default_timer() - start)
 #pdb.set_trace()
+
