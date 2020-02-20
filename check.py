@@ -19,3 +19,6 @@ lista1 = lista + ["Francesco"]
 print(lista, lista[0], lista[0:2])
 print(lista1)
 print(lista * 2)
+lista[2] = "Giovanni"
+print(lista)
+#pdb.set_trace()
