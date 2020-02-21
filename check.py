@@ -30,6 +30,6 @@ print(lista)
 for epoch in range(10):
     print("Epoch: ", epoch)
 print("Total time : ", default_timer() - start)
-print(lista.index("spam"))
+print(lista.index("spam"))                      # find index of spam word 
 pdb.set_trace()
 
