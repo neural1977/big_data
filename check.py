@@ -12,14 +12,17 @@ import numpy as np
 import sklearn as sc
 import matplotlib as mb
 import pdb
+import os, platform
 #import timeit
 from timeit import default_timer
 #import utils 
 from Utilities.utils import check_cond, calculate_occurencies
-from Utilities.maths import check_even_odd
+from Utilities.maths import check_even_odd, evens, evens_fast, square
 
 start = default_timer()
-  
+print("OS: ", os.name)
+print("Platform: ", platform.system())
+
 print("Hello world!")
 
 lista = [123, "spam", 1.23, "eggs"]
@@ -138,6 +141,55 @@ check_cond(not cond1)
 check_even_odd(12)
 check_even_odd(13)
 check_even_odd(9)
+
+print(evens(100))
+
+for i in range(10,5,-1):
+    print (i)
+    
+print("\n\n")
+
+for i in range(0,10,2):
+    print (i)
+
+t1_start = default_timer()
+lll = list(range(0,1000000))
+lll_temp = []
+for i in lll:
+    lll_temp.append(i ** 2)
+lll1 = lll_temp
+print("First cycle time: ", round(default_timer()-t1_start, 5))
+
+t2_start = default_timer()
+lll2 = [i**2 for i in lll]
+print("Second cycle time: ", round(default_timer()-t2_start, 5))
+
+t3_start = default_timer()
+lll3 = map(square, lll)
+#print(list(lll3))
+#pdb.set_trace()
+print("Third cycle time: ", round(default_timer()-t3_start, 100))
+
+
+print(calculate_occurencies("Francesco Pugliese"))
+sentence = "Io sono contento di questi raggazzi"
+new_sentence = {s: len(s.lower()) for s in sentence.split()}
+new_sentence1 = {s: calculate_occurencies(s.lower()) for s in sentence.split()}
+
+print(new_sentence)
+print(new_sentence1)
+
+
+print("\n\n", evens_fast(10))
+
+
+
+print ([x + y for x in 'francesco' for y in 'natasha'])
+print ([a/b for a in [222,333,432] for b in [2,3,4]])
+
+#print(ll)
+
+
 
 print("Total time : ", default_timer() - start)
 #pdb.set_trace()

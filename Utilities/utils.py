@@ -15,12 +15,11 @@ def calculate_occurencies(stringa_input):
     d_temp = {}
 
     for char in stringa_input.lower():
-        #print(char, end="\n")
         occ = d_temp.get(char, 0)
         if occ == 0: 
             d_temp.update({char : 1})
         else: 
             d_temp[char] += 1
             
-        return d_temp
+    return d_temp
 
