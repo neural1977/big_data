@@ -14,12 +14,13 @@ import matplotlib as mb
 import pdb
 #import timeit
 from timeit import default_timer
-
+#import utils 
+from Utilities.utils import check_cond, calculate_occurencies
+from Utilities.maths import check_even_odd
 
 start = default_timer()
-
+  
 print("Hello world!")
-
 
 lista = [123, "spam", 1.23, "eggs"]
 lista1 = lista + ["Francesco"]
@@ -30,7 +31,6 @@ lista[2] = "Giovanni"
 print(lista)
 for epoch in range(10):
     print("Epoch: ", epoch)
-print("Total time : ", default_timer() - start)
 print(lista.index("spam"))                      # find index of spam word 
 #pdb.set_trace()
 
@@ -119,17 +119,26 @@ print(dd.get("Eta", 0))
 for k in dd.keys():
     print(dd.get(k))
 
-d_temp = {}
 stringa_input = "Noi siamo i ragazzi del Master e siamo stufi abbiamo fame"
-for char in stringa_input.lower():
-    #print(char, end="\n")
-    occ = d_temp.get(char, 0)
-    if occ == 0: 
-        d_temp.update({char : 1})
-    else: 
-        d_temp[char] += 1
-        
-print(d_temp)
+print(calculate_occurencies(stringa_input=stringa_input))
+
+prova = 1
+check_cond(prova)
     
+s_vuoto = set({0})
+check_cond(s_vuoto)
+    
+cond1 = True
+cond2 = False
+    
+check_cond(cond1 and cond2)
+check_cond(cond1 or cond2)
+check_cond(not cond1)
+
+check_even_odd(12)
+check_even_odd(13)
+check_even_odd(9)
+
+print("Total time : ", default_timer() - start)
 #pdb.set_trace()
     
