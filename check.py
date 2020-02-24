@@ -5,8 +5,8 @@ Modified on 20/01/2020
 @author: Francesco Pugliese
 '''
 
-#import tensorflow as tf
-#import keras as tf
+import tensorflow as tf
+import keras as tf
 import pandas as pd
 import numpy as np
 import sklearn as sc
